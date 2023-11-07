@@ -29,6 +29,8 @@ echo -e "\e[35m installing dependencies \e[0m"
 npm install
 
 
+echo -e "\e[34m installing mysql client \e[0m"
+dnf install mysql -y
 
 
 echo -e "\e[34m reloading the system to detect the new service \e[0m"
@@ -41,8 +43,15 @@ echo -e "\e[31m starting backend service \e[0m"
 systemctl start backend
 
 
-echo -e "\e[34m installing mysql client \e[0m"
-dnf install mysql -y
-
 echo -e "\e[35m LOADING SCHEMA \e[0"
 mysql -y mysql-dev.devops76.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
+
+
+echo -e "\e[34m reloading the system to detect the new service \e[0m"
+systemctl daemon-reload
+
+echo -e "\e[32m enabling backend \e[0"
+systemctl enable backend
+
+echo -e "\e[31m starting backend service \e[0m"
+systemctl start backend
