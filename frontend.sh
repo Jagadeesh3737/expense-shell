@@ -2,10 +2,10 @@ echo -e "\e[31m installing nginx \e[0m"
 dnf install nginx -y
 
 echo -e "\e[31m enabling nginx \e[0m"
-systemctl enable nginx -y
+systemctl enable nginx
 
 echo -e "\e[31m starting nginx \e[0m"
-systemctl start nginx -y
+systemctl start nginx
 
 echo -e "\e[31m removing default content \e[0m"
 rm -rf /usr/share/nginx/html/*
