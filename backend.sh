@@ -11,11 +11,11 @@ echo -e "\e[31m copying backend.service \e[0m"
 cp backend.service /etc/systemd/system/backend.service
 
 
-echo -e "\e[34m adding user "varma" \e[0m"
-useradd varma
+echo -e "\e[34m adding user "Jaggu" \e[0m"
+useradd jaggu
 
 echo -e "\e[35m making directory 'app' \e[0m"
-mkdir /app
+mkdir /dhoni
 
 echo -e "\e[36m downloading the backend application code \e[0m"
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip
@@ -23,7 +23,7 @@ curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip
 echo -e "\e[33m unzipping the backend code \e[0m"
 unzip /tmp/backend.zip
 
-cd /app
+cd /dhoni
 
 echo -e "\e[35m installing dependencies \e[0m"
 npm install
@@ -44,7 +44,7 @@ systemctl start backend
 
 
 echo -e "\e[35m LOADING SCHEMA \e[0"
-mysql -y mysql-dev.devops76.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -y mysql-dev.devops76.online -uroot -pExpenseApp@1 < /dhoni/schema/backend.sql
 
 
 echo -e "\e[34m reloading the system to detect the new service \e[0m"
