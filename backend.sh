@@ -28,10 +28,8 @@ cd /app
 echo -e "\e[35m installing dependencies \e[0m"
 npm install
 
-
 echo -e "\e[34m installing mysql client \e[0m"
 dnf install mysql -y
-
 
 echo -e "\e[35m LOADING SCHEMA \e[0"
 mysql -y mysql-dev.devops76.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
