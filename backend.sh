@@ -11,8 +11,8 @@ echo -e "\e[31m copying backend.service \e[0m"
 cp backend.service /etc/systemd/system/backend.service
 
 
-echo -e "\e[34m adding user "JAGGU" \e[0m"
-useradd jaggu
+echo -e "\e[34m adding user "varma" \e[0m"
+useradd varma
 
 echo -e "\e[35m making directory 'app' \e[0m"
 mkdir /app
