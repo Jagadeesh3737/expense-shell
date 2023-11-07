@@ -20,7 +20,6 @@ mkdir /app
 echo -e "\e[36m downloading the backend application code \e[0m"
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip
 
-
 echo -e "\e[33m unzipping the backend code \e[0m"
 unzip /tmp/backend.zip
 
