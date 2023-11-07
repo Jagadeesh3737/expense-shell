@@ -7,6 +7,10 @@ dnf module enable nodejs:18 -y
 echo -e "\e[31m installing nodejs \e[0m"
 dnf install nodejs -y
 
+echo -e "\e[31m copying backend.service \e[0m"
+cp backend.service /etc/systemd/system/backend.service
+
+
 echo -e "\e[34m addind user "expense" \e[0m"
 useradd expense
 
@@ -26,8 +30,7 @@ cd /app
 echo -e "\e[35m installing dependencies \e[0m"
 npm install
 
-echo -e "\e[31m copying backend.service \e[0m"
-cp /etc/systemd/system/backend.service
+
 
 
 echo -e "\e[34m reloading the system to detect the new service \e[0m"
