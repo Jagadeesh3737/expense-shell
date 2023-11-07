@@ -17,13 +17,14 @@ useradd expense
 echo -e "\e[35m making directory 'app' \e[0m"
 mkdir /app
 
+cd /app
+
 echo -e "\e[36m downloading the backend application code \e[0m"
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip
 
 echo -e "\e[33m unzipping the backend code \e[0m"
 unzip /tmp/backend.zip
 
-cd /app
 
 echo -e "\e[35m installing dependencies \e[0m"
 npm install
