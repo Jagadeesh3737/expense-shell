@@ -1,5 +1,5 @@
 log_file=/tmp/expense.log
-color="\e[31m"
+color="\e[35m"
 
 
 echo -e "${color} disabling mysql \e[0m"
