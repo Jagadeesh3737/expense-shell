@@ -67,14 +67,6 @@ else
      echo -e"\e[31m failure \e[0m"
 fi
 
-
-cd /app &>>log_file
-if [ $? -q 0 ]; then
-  echo -e "\e[32m success \e[0m"
-else
-  echo -e "\e[31m failure \e[0m"
-fi
-
 echo -e "${color} unzipping the backend code \e[0m"
 unzip /tmp/backend.zip
 if [ $? -eq 0 ]; then
