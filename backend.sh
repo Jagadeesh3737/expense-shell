@@ -32,11 +32,15 @@ echo -e "${color} downloading the backend application code \e[0m"
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>>log_file
 echo $?
 
+
+cd /app &>>log_file
+echo $?
+
 echo -e "${color} unzipping the backend code \e[0m"
 unzip /tmp/backend.zip &>>log_file
 echo $?
 
-echo -e "${color}m installing dependencies \e[0m"
+echo -e "${color} installing dependencies \e[0m"
 npm install &>>log_file
 echo $?
 
