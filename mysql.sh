@@ -1,7 +1,6 @@
 log_file=/tmp/expense.log
 color="\e[35m"
 
-
 echo -e "${color} disabling mysql \e[0m"
 dnf module disable mysql -y
 echo $?
