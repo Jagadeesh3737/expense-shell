@@ -7,6 +7,8 @@ if [ -d "$1" ]; then
 fi
 mysql_root_password=$1
 
+
+
 echo -e "${color} disabling nodejs \e[0m"
 dnf module disable nodejs -y &>>log_file
 if [ $? -eq 0 ]; then
