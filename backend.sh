@@ -103,9 +103,9 @@ fi
 echo -e "${color} LOADING SCHEMA \e[0"
 mysql -h mysql-dev.devops76.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>log_file
 if [ $? -eq 0 ]; then
-     echo -e "\e[32m success \e[0m"
+    echo -e "\e[32m success \e[0m"
 else
-     echo -e"\e[31m failure \e[0m"
+    echo -e "\e[31m failure \e[0m"
 fi
 
 echo -e "${color} reloading the system to detect the new service \e[0m"
