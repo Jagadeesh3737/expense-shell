@@ -3,11 +3,12 @@ color="\e[34m"
 
 echo -e "${color} installing nginx \e[0m"
 dnf install nginx -y &>>/tmp/expense.log
- if [ $? -eq 0 ]; then
+if [ $? -eq 0 ]; then
      echo -e "\e[34m success \e[0m"
 else
      echo -e"\e[31m failure \e[0m"
 fi
+
 echo -e "${color} enabling nginx \e[0m"
 systemctl enable nginx &>>log_file
 echo $?
