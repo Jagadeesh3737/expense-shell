@@ -3,7 +3,7 @@ color="\e[35m"
 
 
 echo -e "${color} disabling mysql \e[0m"
-dnf module disable mysql -y &>>$log_file
+dnf module disable mysql -y
 echo $?
 
 echo -e "${color} copying mysql.repo \e[0m"
@@ -11,7 +11,7 @@ cp mysql.repo /etc/yum.repos.d/mysql.repo &>>$log_file
 echo $?
 
 echo -e "${color} installing mysql community server \e[0m"
-dnf install mysql-community-server -y &>>$log_file
+dnf install mysql-community-server -y
 echo $?
 
 echo -e "${color} enabling mysql \e[0m"
