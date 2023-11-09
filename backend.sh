@@ -37,11 +37,13 @@ else
 fi
 
 echo -e "${color} adding user "expense" \e[0m"
-useradd expense &>>log_file
-if [ $? -eq 0 ]; then
-  echo -e "\e[32 success \e[0m"
-else
-  echo -e "\e[31m failure \e[0m"
+if [ $? -ne 0 ]; then
+  useradd expense &>>log_file
+    if [ $? -eq 0 ]; then
+      echo -e "\e[32 success \e[0m"
+    else
+      echo -e "\e[31m failure \e[0m"
+    fi
 fi
 
 echo -e "${color} making directory 'app' \e[0m"
@@ -53,11 +55,11 @@ else
 fi
 
 cd /app &>>log_file
-if [ $? -eq 0 ]; then
-     echo -e "\e[32m success \e[0m"
-else
-     echo -e"\e[31m failure \e[0m"
-fi
+  if [ $? -eq 0 ]; then
+       echo -e "\e[32m success \e[0m"
+  else
+       echo -e"\e[31m failure \e[0m"
+  fi
 
 echo -e "${color} downloading the backend application code \e[0m"
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>>log_file
