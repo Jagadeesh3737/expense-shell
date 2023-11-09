@@ -50,7 +50,7 @@ cd /app &>>log_file
   status_check
 
 echo -e "${color} downloading the backend application code \e[0m"
-curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>>log_file
+curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>>$log_file
 status_check
 
 echo -e "${color} unzipping the backend code \e[0m"
