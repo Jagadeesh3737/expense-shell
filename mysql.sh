@@ -3,7 +3,11 @@ color="\e[35m"
 
 echo -e "${color} disabling mysql \e[0m"
 dnf module disable mysql -y
-echo $?
+if [ $? -eq 0 ]; then
+      echo -e"\e[32m success \e[0"
+  else
+        echo -e "\e[31m failure \e[0m"
+fi
 
 echo -e "${color} copying mysql.repo \e[0m"
 cp mysql.repo /etc/yum.repos.d/mysql.repo &>>$log_file
