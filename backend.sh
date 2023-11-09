@@ -37,7 +37,7 @@ cd /app &>>log_file
 echo $?
 
 echo -e "${color} unzipping the backend code \e[0m"
-unzip /tmp/backend.zip &>>log_file
+unzip /tmp/backend.zip
 echo $?
 
 echo -e "${color} installing dependencies \e[0m"
