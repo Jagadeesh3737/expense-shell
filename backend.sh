@@ -1,5 +1,10 @@
 log_file=/tmp/expense.log
 color="\e[31m"
+
+if [ -d "$1" ]; then
+  echo password input missing
+  exit
+fi
 mysql_root_password=$1
 
 echo -e "${color} disabling nodejs \e[0m"
