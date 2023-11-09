@@ -79,7 +79,6 @@ status_check
 
 echo -e "${color} starting backend service \e[0m"
 systemctl start backend &>>log_file
-if [ $? -eq 0 ]; then
 status_check
 
 
