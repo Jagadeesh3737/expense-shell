@@ -52,6 +52,7 @@ echo -e "${color} reloading the system to detect the new service \e[0m"
 systemctl daemon-reload &>>log_file
 echo $?
 
+
 echo -e "${color} enabling backend \e[0"
 systemctl enable backend &>>log_file
 echo $?
