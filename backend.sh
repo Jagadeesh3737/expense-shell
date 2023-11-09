@@ -36,9 +36,10 @@ else
      echo -e"\e[31m failure \e[0m"
 fi
 
-echo -e "${color} adding user "expense" \e[0m"
+
 id expense &>>$log_file
 if [ $? -ne 0 ]; then
+  echo -e "${color} adding user "expense" \e[0m"
     useradd expense &>>log_file
       if [ $? -eq 0 ]; then
         echo -e "\e[32 success \e[0m"
